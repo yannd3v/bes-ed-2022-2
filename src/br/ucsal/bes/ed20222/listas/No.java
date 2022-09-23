@@ -29,6 +29,5 @@ public class No {
 		this.elemento = elemento;
 	}
 	
-	
 
 }
