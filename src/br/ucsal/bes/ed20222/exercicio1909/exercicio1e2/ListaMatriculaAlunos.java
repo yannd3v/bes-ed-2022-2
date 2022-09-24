@@ -1,4 +1,4 @@
-package br.ucsal.bes.ed20222.exercicio1909;
+package br.ucsal.bes.ed20222.exercicio1909.exercicio1e2;
 
 public class ListaMatriculaAlunos {
 
@@ -27,8 +27,9 @@ public class ListaMatriculaAlunos {
 		listaAlunos.inserirInicio("Caio");
 		No no4 = listaAlunos.getInicio();
 		listaAlunos.inserirDepois(no4, "Fabio");
+		listaAlunos.inserirInicio("Zinaldo");
 		listaAlunos.mostrarLista();
-		listaAlunos.pesquisarElemento("Fernanda");
+		listaAlunos.pesquisarElemento("Zinaldo");
 		listaAlunos.ordemAlf();
 
 	}

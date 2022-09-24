@@ -1,15 +1,9 @@
-package br.ucsal.bes.ed20222.exercicio1909;
+package br.ucsal.bes.ed20222.exercicio1909.exercicio1e2;
 
 public class No {
 	
 	private No proximo;
 	private String elemento;
-	
-	
-//	public No(String elemento) {
-//		super();
-//		this.elemento = elemento;
-//	}
 	
 	public No getProximo() {
 		return proximo;
@@ -26,7 +20,7 @@ public class No {
 	@Override
 	public String toString() {
 		return "Nome " + elemento;
-	}	
+	}
 	
 	
 	

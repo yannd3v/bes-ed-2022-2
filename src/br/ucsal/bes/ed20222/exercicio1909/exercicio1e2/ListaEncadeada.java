@@ -1,18 +1,9 @@
-package br.ucsal.bes.ed20222.exercicio1909;
+package br.ucsal.bes.ed20222.exercicio1909.exercicio1e2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-class NoComparator implements Comparator<No>{
-
-	@Override
-	public int compare(No o1, No o2) {
-		return o1.getElemento().compareTo(o2.getElemento());
-	}
-	
-}
 
 public class ListaEncadeada {
 
@@ -119,14 +110,16 @@ public class ListaEncadeada {
 	
 	public void ordemAlf() {
 		No noAuxiliar = inicio;
+		List<String> nomes = new ArrayList<>();
 		while (noAuxiliar != null) {
-			List<No> nomes = new ArrayList<>();
-			nomes.add(noAuxiliar);
-			Collections.sort(nomes, new NoComparator());
-			System.out.println(nomes);
+			nomes.add(noAuxiliar.getElemento());
 			noAuxiliar = noAuxiliar.getProximo();
+			
 		}
+		Collections.sort(nomes);
+		System.out.println(nomes);
 	}
+		
 
 	public void apagarLista() {
 		inicio = null;

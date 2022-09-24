@@ -1,4 +1,4 @@
-package br.ucsal.bes.ed20222.exercicio1909;
+package br.ucsal.bes.ed20222.exercicio1909.exercicio1e2;
 
 public class ListaProfessores {
 	
