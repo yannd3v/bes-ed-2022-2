@@ -25,7 +25,7 @@ public class No {
 	}
 	@Override
 	public String toString() {
-		return "No [proximo=" + proximo + ", elemento=" + elemento + "]";
+		return "Nome " + elemento;
 	}	
 	
 	

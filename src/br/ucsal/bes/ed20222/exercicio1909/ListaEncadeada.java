@@ -1,111 +1,148 @@
 package br.ucsal.bes.ed20222.exercicio1909;
 
-public class ListaEncadeada {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class NoComparator implements Comparator<No>{
+
+	@Override
+	public int compare(No o1, No o2) {
+		return o1.getElemento().compareTo(o2.getElemento());
+	}
 	
+}
+
+public class ListaEncadeada {
+
 	private No inicio;
 	private int tamanho = 0;
-	
+
 	public ListaEncadeada() {
 		super();
 		this.inicio = null;
 	}
-	
-	
+
 	public boolean estaVazia() {
-		if(inicio == null) {
+		if (inicio == null) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	public void mostrarLista() {
-		No noAux = inicio;
-		while(noAux != null) {
-			System.out.println(noAux.getElemento());
-			noAux = noAux.getProximo();
+		No noAuxiliar = inicio;
+		while (noAuxiliar != null) {
+			System.out.println(noAuxiliar.getElemento());
+			noAuxiliar = noAuxiliar.getProximo();
 		}
 	}
-	
+
 	public void inserirInicio(String info) {
 		No no1 = new No();
 		no1.setElemento(info);
 		no1.setProximo(inicio);
 		inicio = no1;
-		tamanho ++;
+		tamanho++;
 	}
-		
-	public void inserirPosicao(No no, String info) {
-		if(estaVazia()) {
+
+	public void inserirDepois(No no, String info) {
+		if (estaVazia()) {
 			inserirInicio(info);
 		} else {
-			No noAux = new No();
-			noAux.setElemento(info);
-			noAux.setProximo(no.getProximo());
-			no.setProximo(noAux);
+			No noAuxiliar = new No();
+			noAuxiliar.setElemento(info);
+			noAuxiliar.setProximo(no.getProximo());
+			no.setProximo(noAuxiliar);
 		}
 		tamanho++;
 	}
-	
+
 	public void inserirFim(String info) {
-		if(estaVazia()) {
+		if (estaVazia()) {
 			inserirInicio(info);
 		} else {
-			No noAux = inicio;
-			while(noAux.getProximo() != null) {
-				noAux = noAux.getProximo();
+			No noAuxiliar = inicio;
+			while (noAuxiliar.getProximo() != null) {
+				noAuxiliar = noAuxiliar.getProximo();
 			}
 			No no1 = new No();
 			no1.setElemento(info);
-			noAux.setProximo(no1);
+			noAuxiliar.setProximo(no1);
 			tamanho++;
 		}
 	}
-	
+
 	public No removePrimeiro() {
-		if(estaVazia()) {
+		if (estaVazia()) {
 			return null;
 		} else {
-			No noAux = new No();
-			noAux = inicio;
+			No noAuxiliar = new No();
+			noAuxiliar = inicio;
 			inicio = inicio.getProximo();
 			tamanho--;
-			return noAux;
+			return noAuxiliar;
 		}
 	}
-	
+
 	public void removeDepois(No no) {
-		if(estaVazia()) {
+		if (estaVazia()) {
 			System.out.println("VAZIA");
 		} else {
-			No noAux = inicio;
-			No anterior = null;
-			while(noAux.getProximo() != null) {
-				anterior = noAux;
-				noAux = noAux.getProximo();
-				if(noAux.equals(no)) {
-					System.out.println("NÓ ENCONTRADO " + noAux.getElemento());
-					anterior.setProximo(noAux.getProximo());
+			No noAuxiliar = inicio;
+			No noAnterior = null;
+			while (noAuxiliar.getProximo() != null) {
+				noAnterior = noAuxiliar;
+				noAuxiliar = noAuxiliar.getProximo();
+				if (noAuxiliar.equals(no)) {
+					noAnterior.setProximo(noAuxiliar.getProximo());
 				}
 			}
 		}
 	}
+	
+	public void pesquisarElemento(String elemento) {
+		No noAuxiliar = inicio;
+		while(noAuxiliar != null) {
+			if (noAuxiliar.getElemento().equalsIgnoreCase(elemento)) {
+				System.err.println("ELEMENTO ENCONTRADO");
+				break;
+			}
+			noAuxiliar = noAuxiliar.getProximo();
+		}
 
+	}
+	
+	
+	
+	public void ordemAlf() {
+		No noAuxiliar = inicio;
+		while (noAuxiliar != null) {
+			List<No> nomes = new ArrayList<>();
+			nomes.add(noAuxiliar);
+			Collections.sort(nomes, new NoComparator());
+			System.out.println(nomes);
+			noAuxiliar = noAuxiliar.getProximo();
+		}
+	}
+
+	public void apagarLista() {
+		inicio = null;
+	}
 
 	public No getInicio() {
 		return inicio;
 	}
 
-
 	public void setInicio(No inicio) {
 		this.inicio = inicio;
 	}
-
 
 	@Override
 	public String toString() {
 		return "ListaEncadeada [inicio=" + inicio.getElemento() + ", tamanho=" + tamanho + "]";
 	}
-	
 
 }
