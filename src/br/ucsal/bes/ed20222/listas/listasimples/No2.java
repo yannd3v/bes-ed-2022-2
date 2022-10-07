@@ -1,4 +1,4 @@
-package br.ucsal.bes.ed20222.listas;
+package br.ucsal.bes.ed20222.listas.listasimples;
 
 public class No2 {
 	

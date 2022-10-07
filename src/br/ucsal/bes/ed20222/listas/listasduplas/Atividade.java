@@ -1,4 +1,4 @@
-package listasDuplas;
+package br.ucsal.bes.ed20222.listas.listasduplas;
 
 public class Atividade {
 
