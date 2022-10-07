@@ -1,4 +1,4 @@
-package br.ucsal.bes.ed2022.atividade0310.mdcrecursivo;
+package br.ucsal.bes.ed20222.atividade0310.mdcrecursivo;
 
 import java.util.Scanner;
 

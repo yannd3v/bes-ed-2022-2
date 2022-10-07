@@ -1,4 +1,4 @@
-package br.ucsal.bes.ed2022.atividade0310.ordenarDesordenada;
+package br.ucsal.bes.ed20222.atividade0310.ordenarDesordenada;
 
 public class No {
 	private No proximo;
