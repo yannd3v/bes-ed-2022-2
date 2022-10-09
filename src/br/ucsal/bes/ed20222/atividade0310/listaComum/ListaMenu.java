@@ -12,7 +12,7 @@ public class ListaMenu {
 			System.out.println("O que deseja ? \n1-Inserir nome  \n2-Listar \n3-Lista de nomes comuns \n4-Sair");
 			int opcao = entrada.nextInt();
 			switch (opcao) {
-			case 1: Lista.inserir();
+			case 1: Lista.lerNomes();
 					break;
 			case 2: Lista.exibir();
 					break;

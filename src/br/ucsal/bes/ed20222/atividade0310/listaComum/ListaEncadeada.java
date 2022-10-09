@@ -1,25 +1,14 @@
 package br.ucsal.bes.ed20222.atividade0310.listaComum;
 
+
 public class ListaEncadeada {
-	private No inicio;
-	private int totalElemento;
+	No inicio;
+	int tamanho;
 	
 	public ListaEncadeada() {
 		super();
 		this.inicio = null;
 	}
-	
-
-	public int getTotalElemento() {
-		return totalElemento;
-	}
-
-
-
-	public No getInicio() {
-		return inicio;
-	}
-	
 	
 	public boolean estaVazia() {
 		if(inicio == null) {
@@ -30,30 +19,43 @@ public class ListaEncadeada {
 	}
 	
 
-	public void insere(String info) {
-		No no1 = new No(info);
-		no1.setProximo(inicio);
+	public void inserir(String info) {
+		No no1 = new No();
+		no1.info = info;
+		no1.proximo = inicio;
 		inicio = no1;
-		totalElemento++;
+		tamanho++;
+	
 	}
 	
 	
 	public void mostrarLista() {
-		if(estaVazia()) {
-			System.out.println("LISTA VAZIA");
-		} else {
-			No noAuxiliar = inicio;
-			while(noAuxiliar != null) {
-				System.out.println(noAuxiliar.getElemento());
-				noAuxiliar = noAuxiliar.getProximo();
-			}
+		No noAuxiliar = inicio;
+		while(noAuxiliar != null) {
+			System.out.println(noAuxiliar.info);
+			noAuxiliar = noAuxiliar.proximo;
 		}
+		
+
 	}
 	
-
-	@Override
-	public String toString() {
-		return "ListaEncadeada [inicio=" + inicio.getElemento() + ", totalElemento=" + totalElemento + "]";
+	public boolean pesquisarComuns(String info) {
+		No noAuxiliar = inicio;
+		boolean nomeIgual = false;
+		while(noAuxiliar != null) {
+			if (noAuxiliar.info.equalsIgnoreCase(info)) {
+				nomeIgual = true;
+			}
+			noAuxiliar = noAuxiliar.proximo;
+		}
+		return nomeIgual;
+	}
+	
+	public void exibirComumm() {
+		No cursor = inicio;
+		while(cursor != null) {
+			
+		}
 	}
 	
 }
